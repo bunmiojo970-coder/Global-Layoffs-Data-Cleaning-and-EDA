@@ -143,6 +143,10 @@ FROM layoffs_staging2;
 UPDATE layoffs_staging2
 SET `date` = STR_TO_DATE(`date`, '%m/%d/%Y'); 
 
+-- now we can update the date type properly
+
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN `date` DATE;
 
 -- Null Values or Blank Values
 
